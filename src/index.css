@@ -1,0 +1,67 @@
+:root {
+  --orange: #F5841F;
+  --blue: #00ADEF;
+  --orange-light: rgba(245, 132, 31, 0.12);
+  --blue-light: rgba(0, 173, 239, 0.12);
+  --text: #444;
+  --text-muted: #888;
+  --bg: #fff;
+  --bg-section: #f8f9ff;
+  --border: #e8e8ef;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+  --gradient: linear-gradient(135deg, #F5841F 0%, #F5B51F 40%, #00ADEF 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(245,132,31,0.08) 0%, rgba(0,173,239,0.08) 100%);
+
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
