@@ -372,6 +372,90 @@ function ScenariosSection() {
   )
 }
 
+const FAQS = [
+  {
+    q: '앱이 실행되지 않거나 오류가 발생해요.',
+    a: '앱을 완전히 종료 후 다시 실행해 보세요. 문제가 지속되면 앱을 삭제 후 재설치하거나 아래 이메일로 문의해 주세요.',
+  },
+  {
+    q: '공유 코드를 입력했는데 참여가 안 돼요.',
+    a: '코드가 올바른지 다시 확인해 주세요. 코드는 대소문자를 구분합니다. 최대 인원(3명)이 이미 찼을 수도 있어요.',
+  },
+  {
+    q: '할 일이 실시간으로 업데이트되지 않아요.',
+    a: '인터넷 연결 상태를 확인해 주세요. 연결이 불안정하면 동기화가 지연될 수 있습니다.',
+  },
+  {
+    q: 'AI 투두 추천 기능은 어떻게 사용하나요?',
+    a: '투두 리스트 화면에서 AI 추천 버튼을 탭하면 현재 상황에 맞는 할 일을 자동으로 추천해 드립니다.',
+  },
+  {
+    q: '계정 탈퇴 또는 데이터 삭제는 어떻게 하나요?',
+    a: '메뉴에서 닉네임 변경 메뉴에서 탈퇴 및 데이터 삭제를 진행할 수 있습니다.',
+  },
+]
+
+function SupportSection() {
+  const { ref, inView } = useInView()
+  const [openIdx, setOpenIdx] = useState<number | null>(null)
+
+  return (
+    <section className="support-section" ref={ref} id="support">
+      <div className="section-inner">
+        <div className={`section-label fade-up${inView ? ' visible' : ''}`} style={{ color: '#7c3aed' }}>고객 지원</div>
+        <h2 className={`section-title fade-up${inView ? ' visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          문의하기 &amp; FAQ
+        </h2>
+        <p className={`section-sub fade-up${inView ? ' visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
+          궁금한 점이 있으시면 언제든지 연락해 주세요.
+        </p>
+
+        <div className={`support-layout fade-up${inView ? ' visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
+          {/* FAQ */}
+          <div className="support-faq">
+            <h3 className="support-sub-title">자주 묻는 질문</h3>
+            <div className="faq-list">
+              {FAQS.map((faq, i) => (
+                <div key={i} className={`faq-item${openIdx === i ? ' open' : ''}`}>
+                  <button className="faq-q" onClick={() => setOpenIdx(openIdx === i ? null : i)}>
+                    <span>{faq.q}</span>
+                    <span className="faq-arrow">{openIdx === i ? '▲' : '▼'}</span>
+                  </button>
+                  {openIdx === i && <div className="faq-a">{faq.a}</div>}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div className="support-contact">
+            <h3 className="support-sub-title">직접 문의</h3>
+            <div className="contact-card">
+              <div className="contact-icon">✉️</div>
+              <p className="contact-desc">
+                FAQ에서 해결되지 않은 문제나 기타 문의 사항은 이메일로 보내주세요.
+                <br />최대한 빠르게 답변드리겠습니다.
+              </p>
+              <a
+                href="mailto:jaeseok9405@gmail.com?subject=Shared Check 문의"
+                className="contact-email-btn"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                jaeseok9405@gmail.com
+              </a>
+              <p className="contact-note">
+                앱 버전, 기기 모델, OS 버전을 함께 알려주시면 더 빠른 해결이 가능합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function DownloadSection() {
   const { ref, inView } = useInView()
   return (
@@ -426,6 +510,7 @@ function Header() {
           <span className="header-logo-text">Shared Check</span>
         </div>
         <nav className="header-nav">
+          <a href="#support">문의하기</a>
           <a href="https://apps.apple.com/kr/app/shared-check/id6762721758" target="_blank" rel="noopener noreferrer">App Store</a>
           <a href="https://github.com/yoo94" target="_blank" rel="noopener noreferrer">GitHub</a>
         </nav>
@@ -447,6 +532,10 @@ function Footer() {
           <a href="https://apps.apple.com/kr/app/shared-check/id6762721758" target="_blank" rel="noopener noreferrer">App Store</a>
           <span>·</span>
           <a href="https://github.com/yoo94" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span>·</span>
+          <a href="#support">문의하기</a>
+          <span>·</span>
+          <a href="mailto:jaeseok9405@gmail.com">jaeseok9405@gmail.com</a>
         </div>
         <p className="footer-copy">© 2024 Shared Check. All rights reserved.</p>
       </div>
@@ -463,6 +552,7 @@ function App() {
         <FeaturesSection />
         <ShareCodeSection />
         <ScenariosSection />
+        <SupportSection />
         <DownloadSection />
       </main>
       <Footer />

@@ -521,6 +521,106 @@
 }
 .download-btn-ghost:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
 
+/* ===== SUPPORT ===== */
+.support-section { padding: 100px 0; background: #fff; }
+.support-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 48px;
+  align-items: start;
+}
+.support-sub-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item {
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fff;
+}
+.faq-item.open {
+  border-color: #7c3aed;
+  box-shadow: 0 4px 18px rgba(124,58,237,0.1);
+}
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  text-align: left;
+  transition: background 0.15s;
+}
+.faq-q:hover { background: #faf9ff; }
+.faq-arrow { font-size: 11px; color: #7c3aed; flex-shrink: 0; }
+.faq-a {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  border-top: 1px solid #f0eeff;
+  padding-top: 14px;
+}
+
+/* Contact Card */
+.contact-card {
+  background: linear-gradient(135deg, #f5f0ff 0%, #eef6ff 100%);
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  border: 1.5px solid rgba(124,58,237,0.12);
+}
+.contact-icon { font-size: 40px; }
+.contact-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+.contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 4px 18px rgba(124,58,237,0.3);
+}
+.contact-email-btn:hover { background: #6d28d9; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(124,58,237,0.4); }
+.contact-note {
+  font-size: 13px;
+  color: #9b8ec4;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .support-layout { grid-template-columns: 1fr; gap: 32px; }
+}
+
 /* ===== FOOTER ===== */
 .site-footer { background: #111; padding: 48px 24px; text-align: center; }
 .footer-inner { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
