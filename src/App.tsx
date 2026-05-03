@@ -1,26 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
-
-function SharedCheckLogo({ size = 44 }: { size?: number }) {
-  const id = `logo-${size}`
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id={`og-${id}`} x1="5" y1="5" x2="95" y2="95" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#F5841F"/>
-          <stop offset="0.6" stopColor="#F5C01F"/>
-          <stop offset="1" stopColor="#4ab8b8"/>
-        </linearGradient>
-        <linearGradient id={`bg-${id}`} x1="15" y1="75" x2="85" y2="20" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#4ab8b8"/>
-          <stop offset="1" stopColor="#00ADEF"/>
-        </linearGradient>
-      </defs>
-      <path d="M88 26 A44 44 0 1 1 26 88" stroke={`url(#og-${id})`} strokeWidth="11" fill="none" strokeLinecap="round"/>
-      <path d="M22 52 L40 70 L78 28" stroke={`url(#bg-${id})`} strokeWidth="11" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  )
-}
+import logo from './assets/logo.png'
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null)
@@ -461,7 +441,7 @@ function DownloadSection() {
   return (
     <section className="download-section" ref={ref}>
       <div className={`download-inner fade-up${inView ? ' visible' : ''}`}>
-        <SharedCheckLogo size={72} />
+        <img src={logo} width={72} height={72} alt="Shared Check 로고" />
         <h2 className="download-title">지금 바로 시작하세요</h2>
         <p className="download-sub">
           Shared Check와 함께 더욱 스마트하고 즐거운 협업을 경험해보세요!
@@ -506,7 +486,7 @@ function Header() {
     <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
       <div className="header-inner">
         <div className="header-logo">
-          <SharedCheckLogo size={32} />
+          <img src={logo} width={32} height={32} alt="Shared Check 로고" />
           <span className="header-logo-text">Shared Check</span>
         </div>
         <nav className="header-nav">
@@ -524,7 +504,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-logo">
-          <SharedCheckLogo size={28} />
+          <img src={logo} width={28} height={28} alt="Shared Check 로고" />
           <span>Shared Check</span>
         </div>
         <p className="footer-sub">함께하는 투두 리스트 · 코드로 간편 공유</p>
