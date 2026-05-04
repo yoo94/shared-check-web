@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yoo94.github.io/shared-check-web/sitemap.xml
+Sitemap: https://shared-check-web.vercel.app/sitemap.xml
