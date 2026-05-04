@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yoo94.github.io/shared-check-web/sitemap.xml
