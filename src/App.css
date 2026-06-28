@@ -653,3 +653,285 @@
   .phone-frame { width: 240px; }
   .hero-section { padding-top: 80px; }
 }
+
+/* ===== PROFESSIONAL TONE OVERRIDES ===== */
+.site-header {
+  padding: 14px 0;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(220, 227, 234, 0.72);
+}
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+.header-inner,
+.section-inner,
+.hero-content {
+  max-width: 1180px;
+}
+.header-logo-text,
+.gradient-text {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--text);
+}
+.header-nav a:hover {
+  color: var(--blue);
+}
+.hero-section {
+  min-height: 92vh;
+  align-items: stretch;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%),
+    radial-gradient(circle at 100% 0%, rgba(15, 111, 159, 0.08), transparent 34%);
+  padding: 112px 24px 72px;
+}
+.hero-content {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 72px;
+}
+.hero-badge {
+  padding: 5px 10px;
+  background: #ffffff;
+  color: var(--blue);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hero-title {
+  color: #0f172a;
+  font-size: clamp(48px, 6vw, 78px);
+  font-weight: 850;
+  letter-spacing: 0;
+}
+.hero-sub {
+  max-width: 620px;
+  color: #475569;
+}
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -12px 0 32px;
+}
+.hero-proof span {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
+}
+.btn-appstore,
+.btn-github,
+.download-btn-main,
+.download-btn-ghost,
+.contact-email-btn {
+  border-radius: 8px;
+  letter-spacing: 0;
+}
+.btn-appstore {
+  background: #0f172a;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+}
+.btn-appstore:hover {
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.22);
+}
+.btn-github {
+  border: 1px solid var(--border);
+  color: #17202a;
+}
+.hero-phone-wrap {
+  gap: 14px;
+}
+.phone-frame {
+  width: 320px;
+  border-radius: 28px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.18);
+}
+.phone-notch {
+  width: 92px;
+  height: 20px;
+}
+.phone-screen {
+  padding: 18px;
+}
+.phone-add-btn,
+.phone-todo-item.checked .phone-checkbox,
+.phone-progress-fill {
+  background: #0f6f9f;
+}
+.phone-progress-fill {
+  background: linear-gradient(90deg, #13324a 0%, #0f6f9f 100%);
+}
+.phone-progress-text,
+.phone-back {
+  color: var(--blue);
+}
+.hero-panel-caption {
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 13px;
+  box-shadow: var(--shadow-sm);
+}
+.hero-panel-caption strong {
+  color: #0f172a;
+}
+.section-label {
+  color: var(--blue);
+  letter-spacing: 0.08em;
+}
+.section-title {
+  color: #0f172a;
+  letter-spacing: 0;
+}
+.features-section,
+.scenarios-section {
+  background: var(--bg-section);
+}
+.feature-card,
+.share-step,
+.scenario-content,
+.scenario-phone,
+.faq-item,
+.contact-card {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.feature-card {
+  padding: 28px;
+}
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.feature-icon {
+  width: 38px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  background: #eef5f9;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+.feature-title,
+.share-step-body h4,
+.support-sub-title {
+  color: #0f172a;
+}
+.share-step {
+  background: #ffffff;
+}
+.share-step-num {
+  border-radius: 6px;
+  background: #0f172a;
+}
+.share-arrow {
+  color: #94a3b8;
+}
+.share-code-box {
+  border: 1px solid #9cc4d9;
+  border-radius: 8px;
+  background: #f4f9fc;
+}
+.share-copy-btn,
+.share-join-btn {
+  border-radius: 6px;
+}
+.scenario-tab {
+  border-width: 1px;
+  border-radius: 8px;
+}
+.scenario-content {
+  border-width: 1px;
+}
+.scenario-badge {
+  border-radius: 6px;
+}
+.support-section {
+  background: #ffffff;
+}
+.faq-item.open {
+  border-color: var(--blue);
+  box-shadow: 0 8px 24px rgba(15, 111, 159, 0.10);
+}
+.faq-arrow {
+  color: var(--blue);
+}
+.contact-card {
+  background: #f8fafc;
+  align-items: stretch;
+}
+.contact-icon {
+  width: fit-content;
+  padding: 5px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+.contact-email-btn {
+  width: fit-content;
+  background: #0f172a;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
+}
+.download-section {
+  background: #0f172a;
+}
+.download-title {
+  letter-spacing: 0;
+}
+.download-btn-main {
+  color: #0f172a;
+}
+.download-btn-ghost {
+  border-width: 1px;
+}
+.site-footer {
+  background: #0b1120;
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .hero-proof,
+  .hero-cta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 92px 18px 56px;
+  }
+  .hero-title {
+    font-size: 44px;
+  }
+  .phone-frame,
+  .hero-panel-caption {
+    width: min(100%, 300px);
+  }
+}

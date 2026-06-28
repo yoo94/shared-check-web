@@ -1,18 +1,18 @@
 :root {
-  --orange: #F5841F;
-  --blue: #00ADEF;
-  --orange-light: rgba(245, 132, 31, 0.12);
-  --blue-light: rgba(0, 173, 239, 0.12);
-  --text: #444;
-  --text-muted: #888;
-  --bg: #fff;
-  --bg-section: #f8f9ff;
-  --border: #e8e8ef;
-  --shadow-sm: 0 2px 12px rgba(0,0,0,0.08);
-  --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
-  --gradient: linear-gradient(135deg, #F5841F 0%, #F5B51F 40%, #00ADEF 100%);
-  --gradient-soft: linear-gradient(135deg, rgba(245,132,31,0.08) 0%, rgba(0,173,239,0.08) 100%);
+  --orange: #d96f18;
+  --blue: #0f6f9f;
+  --orange-light: rgba(217, 111, 24, 0.08);
+  --blue-light: rgba(15, 111, 159, 0.08);
+  --text: #17202a;
+  --text-muted: #64748b;
+  --bg: #ffffff;
+  --bg-section: #f6f8fb;
+  --border: #dce3ea;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 24px 70px rgba(15, 23, 42, 0.16);
+  --gradient: linear-gradient(135deg, #13324a 0%, #0f6f9f 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(19, 50, 74, 0.06) 0%, rgba(15, 111, 159, 0.08) 100%);
 
   font-family: 'Pretendard', 'Apple SD Gothic Neo', system-ui, -apple-system, sans-serif;
   font-size: 16px;

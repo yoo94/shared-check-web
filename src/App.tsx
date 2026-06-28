@@ -17,40 +17,40 @@ function useInView(threshold = 0.15) {
 
 const FEATURES = [
   {
-    icon: '🔑',
+    icon: '01',
     title: '코드로 간편 공유',
-    desc: '복잡한 초대 절차 없이 고유 코드 하나로 즉시 초대. 최대 3명까지 함께할 수 있어요.',
+    desc: '고유 코드 기반으로 폴더를 공유하고 승인 흐름을 거쳐 참여자를 관리합니다.',
   },
   {
-    icon: '⚡',
-    title: '실시간 현황 업데이트',
-    desc: '참여자 모두가 할 일 목록을 실시간으로 확인하고 업데이트. 누가 무엇을 완료했는지 즉시 파악.',
+    icon: '02',
+    title: '공동 진행 현황',
+    desc: '참여자가 같은 목록을 기준으로 완료 상태와 남은 항목을 빠르게 확인합니다.',
   },
   {
-    icon: '📁',
+    icon: '03',
     title: '폴더별 할 일 관리',
-    desc: '프로젝트, 장보기, 여행 등 다양한 주제의 투두 리스트를 폴더로 나누어 깔끔하게 관리.',
+    desc: '프로젝트, 일정, 준비물처럼 목적이 다른 작업을 폴더 단위로 구분합니다.',
   },
   {
-    icon: '🤖',
+    icon: '04',
     title: 'AI 투두 추천',
-    desc: '상황에 맞는 할 일을 AI가 스마트하게 추천해 드립니다. 더 빠르고 편리하게 할 일을 추가하세요.',
+    desc: '입력한 상황을 바탕으로 필요한 체크 항목을 제안해 초기 목록 작성 시간을 줄입니다.',
   },
   {
-    icon: '🌍',
+    icon: '05',
     title: '다국어 지원',
-    desc: '한국어, 영어 등 다양한 언어를 지원합니다. 전 세계 어디서나 편리하게 사용하세요.',
+    desc: '한국어, 영어, 일본어 환경을 지원해 다양한 사용자와 함께 사용할 수 있습니다.',
   },
   {
-    icon: '🔐',
+    icon: '06',
     title: '소셜 로그인',
-    desc: '카카오, 네이버, 애플 간편 로그인 지원. 가입 없이 바로 시작할 수 있어요.',
+    desc: '카카오, 네이버, 애플 로그인을 지원해 계정 생성 과정을 간소화합니다.',
   },
 ]
 
 const SCENARIOS = [
   {
-    label: '👨‍👩‍👧‍👦 가족',
+    label: '가족',
     title: '가족 장보기 목록',
     items: ['우유 2개', '계란 한 판', '두부', '된장찌개 재료', '과일'],
     checked: [true, true, false, false, true],
@@ -58,7 +58,7 @@ const SCENARIOS = [
     color: '#F5841F',
   },
   {
-    label: '💼 팀',
+    label: '팀',
     title: '프로젝트 마일스톤',
     items: ['요구사항 분석', 'UI 디자인', '백엔드 API 개발', '프론트엔드 연동', '테스트'],
     checked: [true, true, true, false, false],
@@ -66,7 +66,7 @@ const SCENARIOS = [
     color: '#00ADEF',
   },
   {
-    label: '💑 커플',
+    label: '커플',
     title: '제주도 여행 계획',
     items: ['항공권 예약', '숙소 예약', '렌터카 예약', '맛집 리스트 정리', '여행 가방 싸기'],
     checked: [true, false, false, true, false],
@@ -74,7 +74,7 @@ const SCENARIOS = [
     color: '#e83e8c',
   },
   {
-    label: '🎉 친구',
+    label: '친구',
     title: '파티 준비물',
     items: ['음료 준비', '간식 구매', '장소 예약', '게임 준비', '카메라 충전'],
     checked: [false, false, true, true, false],
@@ -91,19 +91,20 @@ function HeroSection() {
 
   return (
     <section className="hero-section">
-      <div className="hero-bg-orb orb1" />
-      <div className="hero-bg-orb orb2" />
-      <div className="hero-bg-orb orb3" />
       <div className="hero-content">
         <div className="hero-text">
-          <div className="hero-badge">함께하는 투두 리스트</div>
+          <div className="hero-badge">Shared task workspace</div>
           <h1 className="hero-title">
-            <span className="gradient-text">Shared Check</span>
+            <span>Shared Check</span>
           </h1>
           <p className="hero-sub">
-            코드로 간편하게 공유하는 공동 투두 리스트.<br />
-            친구, 가족과 할 일을 실시간으로 함께 관리하세요!
+            개인 일정부터 공유 폴더까지, 여러 사람이 같은 체크리스트를 기준으로 할 일을 정리하고 진행 상황을 맞춥니다.
           </p>
+          <div className="hero-proof">
+            <span>Folder sharing</span>
+            <span>Progress tracking</span>
+            <span>AI suggestions</span>
+          </div>
           <div className="hero-cta">
             <a
               href="https://apps.apple.com/kr/app/shared-check/id6762721758"
@@ -168,11 +169,14 @@ function HeroSection() {
               </div>
             </div>
           </div>
-          <p className="hero-interact-hint">👆 클릭해서 체크해보세요!</p>
+          <div className="hero-panel-caption">
+            <span>Interactive preview</span>
+            <strong>{checkedItems.filter(Boolean).length}/{items.length}</strong>
+          </div>
         </div>
       </div>
       <div className="hero-scroll-hint">
-        <span>스크롤하여 더 알아보기</span>
+        <span>제품 흐름 보기</span>
         <div className="scroll-arrow" />
       </div>
     </section>
@@ -225,7 +229,7 @@ function ShareCodeSection() {
           코드 하나로 즉시 공유
         </h2>
         <p className={`section-sub fade-up${inView ? ' visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
-          복잡한 회원가입, 친구 추가 없이 — 코드만 공유하면 바로 시작!
+          고유 코드와 승인 절차로 필요한 사람만 폴더에 참여시킬 수 있습니다.
         </p>
         <div className={`share-demo fade-up${inView ? ' visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
           <div className="share-step">
@@ -234,7 +238,7 @@ function ShareCodeSection() {
               <h4>폴더 생성</h4>
               <p>투두 리스트 폴더를 만들고 할 일을 추가하세요</p>
               <div className="share-folder-mock">
-                <span>📁</span> 오늘 장보기
+                <span>폴더</span> 오늘 장보기
               </div>
             </div>
           </div>
@@ -257,7 +261,7 @@ function ShareCodeSection() {
               <h4>즉시 참여</h4>
               <p>상대방이 코드를 입력하면 바로 함께 관리!</p>
               <div className="share-join-mock">
-                <div className="share-join-folder">📁 오늘 장보기</div>
+                <div className="share-join-folder">오늘 장보기</div>
                 <div className="share-join-info">방장: 유재석 · 현재 인원: 0/3</div>
                 <button className="share-join-btn">공유받기 요청</button>
               </div>
@@ -387,7 +391,7 @@ function SupportSection() {
           문의하기 &amp; FAQ
         </h2>
         <p className={`section-sub fade-up${inView ? ' visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
-          궁금한 점이 있으시면 언제든지 연락해 주세요.
+          사용 중 문제가 있거나 개선 제안이 있다면 아래 채널로 알려주세요.
         </p>
 
         <div className={`support-layout fade-up${inView ? ' visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
@@ -411,10 +415,10 @@ function SupportSection() {
           <div className="support-contact">
             <h3 className="support-sub-title">직접 문의</h3>
             <div className="contact-card">
-              <div className="contact-icon">✉️</div>
+              <div className="contact-icon">메일</div>
               <p className="contact-desc">
-                FAQ에서 해결되지 않은 문제나 기타 문의 사항은 이메일로 보내주세요.
-                <br />최대한 빠르게 답변드리겠습니다.
+                FAQ에서 해결되지 않은 문제나 기능 제안은 이메일로 보내주세요.
+                <br />재현 정보와 함께 보내주시면 더 빠르게 확인할 수 있습니다.
               </p>
               <a
                 href="mailto:jaeseok9405@gmail.com?subject=Shared Check 문의"
@@ -442,9 +446,9 @@ function DownloadSection() {
     <section className="download-section" ref={ref}>
       <div className={`download-inner fade-up${inView ? ' visible' : ''}`}>
         <img src={logo} width={72} height={72} alt="Shared Check 로고" />
-        <h2 className="download-title">지금 바로 시작하세요</h2>
+        <h2 className="download-title">공유 체크리스트를 시작하세요</h2>
         <p className="download-sub">
-          Shared Check와 함께 더욱 스마트하고 즐거운 협업을 경험해보세요!
+          폴더를 만들고, 코드를 공유하고, 같은 목록을 기준으로 진행 상황을 맞춰보세요.
         </p>
         <div className="download-btns">
           <a
